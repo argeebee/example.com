@@ -14,5 +14,39 @@
             </ul>
         </nav>
         <h1>Regina Besa</h1>
+
+<form action="https://formspree.io/reginabesa@gmail.com"
+      method="POST">
+
+    <input type="hidden" name="_subject" value="New Submission!"></input>
+    <input type="hidden" name="_next" value="//argeebee.github.io/thanks.html">
+    <div>
+        <label for="name">Name</label><br>
+        <input type="text" name="name">
+    </div>
+
+    <div>
+        <label for="email">Email Address</label><br>
+        <input type="email" name="_replyto">
+    </div>
+
+    <div>
+        <input type="submit" value="Send">
+        <label for="message">Ask Us a Question</label><br>
+        <textarea rows="4" cols="50" name="message"></textarea>
+    </div>    
+
+    <div>
+    <label>What is your favorite flavor?</label>
+    <input list="flavorList" name="flavor">
+    <datalist id="flavorList">
+        <option value="vanilla">Vanilla</option>
+        <option value="chocolate">Chocolate</option>
+        <option value="strawberry">Strawberry</option>
+        <option value="hazelnut">Hazelnut</option>
+    </datalist>
+    </div>
+    
+</form>
     </body>
 </html>
