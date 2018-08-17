@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF=8">
+       <meta charset="UTF=8">
        <title>Regina Besa</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <link rel="stylesheet" type="text/css" href="dist/css/main.css">
+       
     </head>
+    
     <body>
         
-        <nav>
-        <p>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="resume.html">Resume</a></li>
-                <li><a href="contact.html">Contact</a></li>                
-            </ul>
-        </p>
-        
-        </nav>
-        
         <header>
+                <span class="logo">Regina Besa</span>
+                <a id="toggleMenu">Menu</a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="resume.html">Resume</a></li>
+                        <li><a href="contact.html">Contact</a></li>                
+                    </ul>
+                </nav>
+        </header>
+        <div>
                 <h1>Regina Besa</h1>
                 <a href="https://www.linkedin.com/in/regina-besa-95650711/" target="_blank" rel="noopener">LinkedIn</a>
                 &#x25CF;
@@ -27,10 +30,10 @@
                 &#x25CF;
 
                 Chicago, IL
-            </header>
+        </div>
 
         <main>
-           <h2>Junior Web App Mobile Hybrid Developer</h2> 
+           <h2>Junior Developer</h2> 
            <p>Creative Technologist with recent volunteer experience. Professional with excellent time management skills that enjoys a good challenge.</p>
 
            <ul>
@@ -136,5 +139,22 @@
 
 
         </main>
+
+        <script>
+
+                var toggleMenu = document.getElementById('toggleMenu');
+                var nav = document.querySelector('nav');
+                toggleMenu.addEventListener(
+                  'click',
+                  function(){
+                    if(nav.style.display=='block'){
+                      nav.style.display='none';
+                    }else{
+                      nav.style.display='block';
+                    }
+                  }
+                );
+        </script>
+
     </body>
 </html>

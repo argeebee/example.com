@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF=8">
-       <title>Regina Besa</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
+        <head>
+                <meta charset="UTF=8">
+                <title>Regina Besa</title>
+                <link rel="stylesheet" type="text/css" href="dist/css/main.css">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        </head>
     <body>
         
-        <nav>
-        <p>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="resume.html">Resume</a></li>
-                <li><a href="contact.html">Contact</a></li>                
-            </ul>
-        </p>
-        </nav>
+        <header>
+                <span class="logo">Regina Besa</span>
+                <a id="toggleMenu">Menu</a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="resume.html">Resume</a></li>
+                        <li><a href="contact.html">Contact</a></li>                
+                    </ul>
+                </nav>
+        </header>
         <main>
         <h1>Regina Besa</h1>
         <p>
@@ -24,5 +27,21 @@
             Please come back soon.
         </p>
         </main>
+
+        <script>
+
+                var toggleMenu = document.getElementById('toggleMenu');
+                var nav = document.querySelector('nav');
+                toggleMenu.addEventListener(
+                  'click',
+                  function(){
+                    if(nav.style.display=='block'){
+                      nav.style.display='none';
+                    }else{
+                      nav.style.display='block';
+                    }
+                  }
+                );
+              </script>
     </body>
 </html>
