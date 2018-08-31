@@ -1,8 +1,12 @@
 <?php
 
 include 'core/Regina/src/Validation/Validate.php';
+include 'vendor/autoload.php';
+include '../config/keys.php';
 
 use Regina\Validation;
+use Mailgun\Mailgun;
+
 
 $valid= new Regina\Validation\Validate();
 
@@ -37,8 +41,28 @@ if(!empty($input)){
     $valid->check($input);
 
     if(empty($valid->errors)){
-        $message = '<div>Your form has been submitted</div>';
-        header('LOCATION: thanks.php');
+
+
+
+
+
+
+
+
+# Instantiate the client.
+$mgClient = new Mailgun(MG_KEY);
+
+# Make the call to the client.
+$result = $mgClient->sendMessage(MG_DOMAIN,[                          
+                'from'    =>"{$input['name']} <{$input['email']}>",
+                'to'      => 'regina besa <reginabesa@gmail.com>',
+                'subject' => 'Contact form submitted',
+                'text'    => $input['message']
+]);
+
+if($result->http_response_code === 200){
+   return header('LOCATION: thanks.php');
+        
     }else{
         $message = '<div style="color:#ff0000">Your form has errors!</div>';
     }
@@ -76,7 +100,8 @@ if(!empty($input)){
 <form action="contact.php" method="POST" novalidate>
 
     <div class="form-control">
-        <label for="name">Name</label><br>
+        <label for="name">Name</label>
+        <br>
         <input value="<?php echo $valid->userInput('name'); ?>" type="text" name="name" id="name">
         <div>
         <?php echo $valid->error('name'); ?>
@@ -84,7 +109,8 @@ if(!empty($input)){
   </div>
 
     <div class="form-control">
-        <label for="email">Email Address</label><br>
+        <label for="email">Email Address</label>
+        <br>
         <input value="<?php echo $valid->userInput('email'); ?>" type="email" name="email" id="email">
         <div>
         <?php echo $valid->error('email'); ?>
@@ -92,7 +118,8 @@ if(!empty($input)){
     </div>
 
     <div class="form-control">
-        <label for="message">Ask us a Question</label><br>
+        <label for="message">Ask us a Question</label>
+        <br>
         <textarea rows="4" cols="50" name="message"><?php echo $valid->userInput('message'); ?></textarea>
         <div>
         <?php echo $valid->error('message'); ?>

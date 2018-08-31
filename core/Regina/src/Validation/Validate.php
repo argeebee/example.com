@@ -17,7 +17,7 @@ class Validate
         return false;
     }
 
-    public function notEmpty(){
+    public function notEmpty($value){
         if(!empty($value)){
             return true;
         }
