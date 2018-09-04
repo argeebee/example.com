@@ -1,44 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-       <meta charset="UTF=8">
-       <title>Regina Besa</title>
-       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <link rel="stylesheet" type="text/css" href="dist/css/resume.min.css">
-       
-    </head>
-    
-    <body>
-        
-        
-        <header>
-                <span class="logo">Regina Besa</span>
-                <a id="toggleMenu">Menu</a>
-                <nav>
-                    <ul>
-                        <li><a href="index.php">Home</a></li>
-                        <li><a href="resume.php">Resume</a></li>
-                        <li><a href="contact.php">Contact</a></li>                
-                    </ul>
-                </nav>
-        </header>
-        
-        <div class="grid-4">
-            <div class="col-1">
-        <div class="intro">
-                <h1>Regina Besa</h1>
-                <a href="https://www.linkedin.com/in/regina-besa-95650711/" target="_blank" rel="noopener">LinkedIn</a>
-                &#x25CF;
-                                
-                <a href="https://github.com/argeebee" target="_blank" rel="noopener">GitHub</a>
-                &#x25CF;
+<?php
 
-                Chicago, IL
-            </div>
-        
+$meta = [];
+$meta['title'] = 'Regina Besa';
+$meta['description'] = 'Regina Besa\'s Resume';
+$meta['keywords'] = 'Regina Besa, Web Developer, Mobile Developer';
 
+$content = <<<EOT
 
-        <main>
         <section>
            <h2>Developer</h2> 
            <p>Creative Technologist with recent volunteer experience. Professional with excellent time management skills that enjoys a good challenge.</p>
@@ -157,23 +125,7 @@
             
 
         </div>
-        </main>
+     
+EOT;
 
-        <script>
-
-                var toggleMenu = document.getElementById('toggleMenu');
-                var nav = document.querySelector('nav');
-                toggleMenu.addEventListener(
-                  'click',
-                  function(){
-                    if(nav.style.display=='block'){
-                      nav.style.display='none';
-                    }else{
-                      nav.style.display='block';
-                    }
-                  }
-                );
-        </script>
-
-    </body>
-</html>
+include '../core/layout.php';
